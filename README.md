@@ -1,6 +1,6 @@
 # Meeting Media Manager (Fork with Extended WebDAV Support)
 
-<img src='./build/icons/icon.png' alt='The M³ Logo' style='max-height: 20vh' />
+<img src='./build/icons/icon.png' alt='The M³ Logo' style='max-height: 10vh' />
 
 > A Meeting Media Manager for meetings of Jehovah's Witnesses.
 
@@ -29,20 +29,3 @@ For **hybrid** or **in-person** congregation meetings, the integrated media pres
 
 As for fully **remote** congregation Zoom meetings, the built-in MP4 conversion feature in M³ enables you to share media files of all types easily, using Zoom's native MP4 sharing feature.
 
-## Does M³ work in my language?
-
-**Yes!** Media for meetings of Jehovah's Witnesses can be automatically downloaded in any of the hundreds of languages available on JW.org. The list of available languages is dynamically updated. All you need to do is select the language you want.
-
-## Want to contribute?
-
-We welcome contributions of all kinds! Check out our [CONTRIBUTING.md](CONTRIBUTING.md) file for instructions on how to contribute to M³.
-
-This app is made with love and a bit of spare time.
-Enjoy!
-
-*- COS*
-
-___
-<img src="https://github.com/advenimus/meeting-media-manager/raw/docs/assets/img/present/media-list.png" alt="Media Presentation Mode" width="45%" /><img src="https://github.com/advenimus/meeting-media-manager/raw/docs/assets/img/present/default-bg.png" alt="Media Window" width="55%" />
-
-![Media Sync in progress](​⬤
