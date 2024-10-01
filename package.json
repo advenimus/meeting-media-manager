@@ -1,6 +1,6 @@
 {
   "name": "meeting-media-manager",
-  "version": "24.4.5-beta.12",
+  "version": "1.0.0",
   "description": "Meeting Media Manager",
   "keywords": [
     "M³",
@@ -8,17 +8,17 @@
     "m3",
     "meeting media manager"
   ],
-  "homepage": "https://sircharlo.github.io/meeting-media-manager/",
-  "bugs": "https://github.com/sircharlo/meeting-media-manager/issues",
+  "homepage": "https://advenimus.github.io/meeting-media-manager/",
+  "bugs": "https://github.com/advenimus/meeting-media-manager/issues",
   "license": "AGPL-3.0-or-later",
   "author": {
-    "name": "sircharlo",
-    "url": "https://github.com/sircharlo/"
+    "name": "advenimus",
+    "url": "https://github.com/advenimus/"
   },
   "main": "./dist/main/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sircharlo/meeting-media-manager.git"
+    "url": "https://github.com/advenimus/meeting-media-manager.git"
   },
   "scripts": {
     "prebuild": "node ./pre-build.js",

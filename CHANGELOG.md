@@ -204,7 +204,7 @@
 
 ### New or improved features
 
-- 🚀 Zoom integration! Automate various Zoom actions, like toggling video/microphone/spotlight or allow to unmute (see [#1303](https://github.com/sircharlo/meeting-media-manager/pull/1303) for details). It's still a beta feature, so make sure you test it thoroughly before use during meetings. Also, always verify that the automation was executed successfully.
+- 🚀 Zoom integration! Automate various Zoom actions, like toggling video/microphone/spotlight or allow to unmute (see [#1303](https://github.com/advenimus/meeting-media-manager/pull/1303) for details). It's still a beta feature, so make sure you test it thoroughly before use during meetings. Also, always verify that the automation was executed successfully.
 - A new optional setting to configure a OBS Studio scene to be used for showing images (useful to show a picture-in-picture style overlay)
 - New language: Romanian (thanks [@baciucristian](https://github.com/baciucristian)!)
 - New prefix schema: `{heading number}-{part number}-{media number}`. Media for the _Treasures_ section starts with `01`, _Apply Yourselves_ starts with `02`, and _Living as Christians_ with `03`.
@@ -279,7 +279,7 @@
 
 ### New or improved features
 
-- 🚀 A new OBS scene selector for making the display of Zoom participants easier (see [#987](https://github.com/sircharlo/meeting-media-manager/pull/987) and [#1022](https://github.com/sircharlo/meeting-media-manager/pull/1022) for details)
+- 🚀 A new OBS scene selector for making the display of Zoom participants easier (see [#987](https://github.com/advenimus/meeting-media-manager/pull/987) and [#1022](https://github.com/advenimus/meeting-media-manager/pull/1022) for details)
 - 🚀 You can now set a custom cache location to store publications and media cache
 - Added informational icons with tooltips for settings that are not immediately clear
 - New language: Slovak (thanks [@madroots](https://github.com/madroots)!)

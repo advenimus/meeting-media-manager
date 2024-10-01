@@ -1,4 +1,4 @@
-/* eslint-disable n/no-callback-literal */
+ 
 import { EventEmitter } from 'events'
 import { platform } from 'os'
 import {

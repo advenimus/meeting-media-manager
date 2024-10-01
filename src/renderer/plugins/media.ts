@@ -380,7 +380,7 @@ const plugin: Plugin = (
             )
 
             // mmItem.Link is not always correct (e.x. treasure imgs for TPO)
-            // See https://github.com/sircharlo/meeting-media-manager/issues/2259
+            // See https://github.com/advenimus/meeting-media-manager/issues/2259
             if (
               lang &&
               mmItem.Link &&

@@ -30,7 +30,6 @@
   </v-col>
 </template>
 <script lang="ts">
-// eslint-disable-next-line import/named
 import { defineComponent, PropType } from 'vue'
 import { Dayjs } from 'dayjs'
 import { DAYS_IN_WEEK } from '~/constants/general'

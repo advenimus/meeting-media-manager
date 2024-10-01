@@ -1,57 +1,10 @@
 <template>
   <v-row class="pa-4">
     <v-col cols="12">
-      <v-alert density="compact" color="warning">
-        <template v-if="deprecatedShow">
-          <h3 class="mb-4">Deprecation Notice</h3>
-          <p>
-            Please be advised that this version of Meeting Media Manager
-            {{ alreadyDeprecated ? 'was' : 'will be' }} deprecated in
-            <b>October 2024</b>, at which point a new and much improved version
-            {{ alreadyDeprecated ? 'was' : 'will be' }} released.
-            <b
-              >Your current settings will be automatically migrated to the new
-              version</b
-            >
-            when
-            {{ alreadyDeprecated ? 'you install it' : 'it becomes available' }}.
-          </p>
-          <p>
-            The {{ alreadyDeprecated ? 'updated' : 'upcoming' }} release
-            features a modern, simplified and intuitive interface designed for
-            an enhanced user experience. Care has been taken to ensure that the
-            new version truly helps audio-video operators to accomplish their
-            tasks more efficiently and without distractions.
-          </p>
-          <p>
-            Note that the following features
-            <b
-              >{{
-                alreadyDeprecated ? 'are no longer' : 'will no longer be'
-              }}
-              available</b
-            >
-            in the new release:
-          </p>
-          <ul class="mb-4">
-            <li>VLC playlist creation</li>
-            <li>Congregation WebDAV sync</li>
-            <li>Beta Zoom integration</li>
-          </ul>
-          <p>
-            If you have any questions regarding this updated release, feel free
-            to
-            <a
-              href="https://github.com/sircharlo/meeting-media-manager/discussions/new?category=q-a"
-              target="_blank"
-              rel="noopener noreferrer"
-              >reach out</a
-            >.
-          </p>
-        </template>
-        <v-btn @click="deprecatedShow = !deprecatedShow"
-          >{{ deprecatedShow ? 'Hide' : 'Show' }} deprecation notice</v-btn
-        >
+      <v-alert density="compact" color="info">
+        <p>
+          <b>This is a custom-built version of M3.</b>
+        </p>
       </v-alert>
     </v-col>
     <v-col cols="5" sm="4" md="3" />
@@ -72,6 +25,7 @@
     </v-col>
   </v-row>
 </template>
+
 <script lang="ts">
 import { defineComponent } from 'vue'
 import {
@@ -96,9 +50,7 @@ export default defineComponent({
     },
   },
   data() {
-    return {
-      deprecatedShow: true,
-      alreadyDeprecated: new Date() >= new Date('2024-11-01'),
+    return {    
     }
   },
   computed: {
