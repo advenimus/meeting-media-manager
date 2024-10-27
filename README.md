@@ -9,4 +9,4 @@ This project is a long-term support (LTS) fork of the original [Meeting Media Ma
 - WebDAV integration for file synchronization.
 - Regular updates to ensure compatibility with current systems.
 
-For more details, see the [original project](https://github.com/sircharlo/meeting-media-manager).
+For more details, see the [original project](https://github.com/sircharlo/meeting-media-manager) for more information.
