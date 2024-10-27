@@ -380,7 +380,7 @@ const plugin: Plugin = (
             )
 
             // mmItem.Link is not always correct (e.x. treasure imgs for TPO)
-            // See https://github.com/sircharlo/meeting-media-manager/issues/2259
+            // See https://github.com/advenimus/meeting-media-manager/issues/2259
             if (
               lang &&
               mmItem.Link &&
@@ -501,20 +501,18 @@ const plugin: Plugin = (
 
     let select = `SELECT ${mmTable}.DocumentId, ${mmTable}.MultimediaId, Multimedia.MimeType, Multimedia.DataType, Multimedia.MajorType, Multimedia.FilePath, Multimedia.Label, Multimedia.Caption, Multimedia.CategoryType, Multimedia.MepsLanguageIndex`
     let from = `FROM ${mmTable} INNER JOIN Document ON ${mmTable}.DocumentId = Document.DocumentId`
-    let where = `WHERE ${
-      docId || docId === 0
-        ? `${mmTable}.DocumentId = ${docId}`
-        : `Document.MepsDocumentId = ${mepsId}`
-    }`
+    let where = `WHERE ${docId || docId === 0
+      ? `${mmTable}.DocumentId = ${docId}`
+      : `Document.MepsDocumentId = ${mepsId}`
+      }`
     let groupAndSort = ''
 
     const includePrinted = $getPrefs('media.includePrinted')
     const videoString = `(Multimedia.MimeType LIKE '%video%' OR Multimedia.MimeType LIKE '%audio%')`
-    const imgString = `(Multimedia.MimeType LIKE '%image%' ${
-      includePrinted
-        ? ''
-        : 'AND Multimedia.CategoryType <> 4 AND Multimedia.CategoryType <> 6'
-    } AND Multimedia.CategoryType <> 9 AND Multimedia.CategoryType <> 10 AND Multimedia.CategoryType <> 25)`
+    const imgString = `(Multimedia.MimeType LIKE '%image%' ${includePrinted
+      ? ''
+      : 'AND Multimedia.CategoryType <> 4 AND Multimedia.CategoryType <> 6'
+      } AND Multimedia.CategoryType <> 9 AND Multimedia.CategoryType <> 10 AND Multimedia.CategoryType <> 25)`
 
     where += ` AND (${videoString} OR ${imgString})`
 
@@ -876,12 +874,12 @@ const plugin: Plugin = (
           const id = mediaItem.docId
             ? `docid-${mediaItem.docId}_1`
             : `pub-${[
-                mediaItem.pubSymbol,
-                mediaItem.issue?.toString().replace(/(\d{6})00$/gm, '$1'),
-                mediaItem.track,
-              ]
-                .filter((v) => !!v && v !== '0')
-                .join('_')}`
+              mediaItem.pubSymbol,
+              mediaItem.issue?.toString().replace(/(\d{6})00$/gm, '$1'),
+              mediaItem.track,
+            ]
+              .filter((v) => !!v && v !== '0')
+              .join('_')}`
 
           promises.push(getAdditionalData(item, id))
         }
@@ -1420,8 +1418,7 @@ const plugin: Plugin = (
         songLangs = (
           $query(
             db,
-            `SELECT Extract.ExtractId, Extract.Link, DocumentExtract.BeginParagraphOrdinal FROM Extract INNER JOIN DocumentExtract ON Extract.ExtractId = DocumentExtract.ExtractId WHERE Extract.RefMepsDocumentClass = 31 ORDER BY Extract.ExtractId LIMIT 2 OFFSET ${
-              2 * weekNr
+            `SELECT Extract.ExtractId, Extract.Link, DocumentExtract.BeginParagraphOrdinal FROM Extract INNER JOIN DocumentExtract ON Extract.ExtractId = DocumentExtract.ExtractId WHERE Extract.RefMepsDocumentClass = 31 ORDER BY Extract.ExtractId LIMIT 2 OFFSET ${2 * weekNr
             }`
           ) as {
             ExtractId: number
@@ -1571,9 +1568,8 @@ const plugin: Plugin = (
                 if (item.queryInfo.TargetParagraphNumberLabel === 9999) {
                   item.safeName += ` ${$translate('footnote')} -`
                 } else {
-                  item.safeName += ` ${$translate('paragraph')} ${
-                    item.queryInfo?.TargetParagraphNumberLabel
-                  } -`
+                  item.safeName += ` ${$translate('paragraph')} ${item.queryInfo?.TargetParagraphNumberLabel
+                    } -`
                 }
               }
               if (item.pub?.includes('sjj')) {
@@ -1747,15 +1743,15 @@ const plugin: Plugin = (
       // Prevent duplicates
       const duplicate = mediaPath
         ? $findOne(
-            join(
-              mediaPath,
-              item.folder as string,
-              '*' +
-                item.safeName
-                  ?.substring(MAX_PREFIX_LENGTH)
-                  .replace('.svg', '.png')
-            )
+          join(
+            mediaPath,
+            item.folder as string,
+            '*' +
+            item.safeName
+              ?.substring(MAX_PREFIX_LENGTH)
+              .replace('.svg', '.png')
           )
+        )
         : null
 
       if (
@@ -1887,30 +1883,30 @@ const plugin: Plugin = (
       const songs = (
         isOnline
           ? (
-              (await getMediaLinks({
-                pubSymbol: songPub,
-                format: mediaFormat.toUpperCase(),
-                lang: mediaLang,
-              })) as VideoFile[]
-            ).filter(
-              (item) =>
-                item.track < KINGDOM_SONGS_MAX &&
-                extname(item.url) === `.${mediaFormat}`
-            )
+            (await getMediaLinks({
+              pubSymbol: songPub,
+              format: mediaFormat.toUpperCase(),
+              lang: mediaLang,
+            })) as VideoFile[]
+          ).filter(
+            (item) =>
+              item.track < KINGDOM_SONGS_MAX &&
+              extname(item.url) === `.${mediaFormat}`
+          )
           : $findAll(
-              join(
-                $pubPath(),
-                '..',
-                mediaLang,
-                songPub,
-                '**',
-                `*.${mediaFormat}`
-              )
-            ).map((item) => ({
-              title: basename(item),
-              track: basename(resolve(item, '..')),
-              path: item,
-            }))
+            join(
+              $pubPath(),
+              '..',
+              mediaLang,
+              songPub,
+              '**',
+              `*.${mediaFormat}`
+            )
+          ).map((item) => ({
+            title: basename(item),
+            track: basename(resolve(item, '..')),
+            path: item,
+          }))
       ).sort(() => 0.5 - Math.random())
 
       if (songs.length === 0) {

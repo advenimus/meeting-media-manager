@@ -104,11 +104,11 @@ jobs:
       #     API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       #   with:
       #     source_file: 'img'
-      #     destination_repo: 'sircharlo/meeting-media-manager'
+      #     destination_repo: 'advenimus/meeting-media-manager'
       #     destination_branch: 'docs'
       #     destination_folder: 'assets'
-      #     user_email: 'sircharlo@gmail.com'
-      #     user_name: 'sircharlo'
+      #     user_email: 'advenimus@gmail.com'
+      #     user_name: 'advenimus'
       #     commit_message: 'chore: update screenshots'
 
       - uses: actions/upload-artifact@v3

@@ -31,9 +31,8 @@ if (
 ) {
   webpackPlugins.push(
     new SentryPlugin({
-      release: `meeting-media-manager@${
-        isDev || !process.env.CI ? 'dev' : pkg.version
-      }`,
+      release: `meeting-media-manager@${isDev || !process.env.CI ? 'dev' : pkg.version
+        }`,
       dist: platform().replace('32', ''), // Remove 32 from win32
       validate: true,
       urlPrefix: '~/_nuxt/',

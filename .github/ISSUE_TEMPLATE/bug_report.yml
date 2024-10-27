@@ -4,7 +4,7 @@ title: '[Bug]: <title>'
 labels: ['bug']
 assignees:
   - mtdvlpr
-  - sircharlo
+  - advenimus
 body:
   - type: markdown
     attributes:

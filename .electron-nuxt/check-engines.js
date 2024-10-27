@@ -33,7 +33,7 @@ function disallowNpm() {
   const execPath = process.env.npm_execpath
   if (!execPath.includes('yarn')) {
     console.log(FG_RED)
-    console.log(`\tMeeting-media-manager supports only Yarn package manager.`)
+    console.log(`\tmeeting-media-manager supports only Yarn package manager.`)
     console.log(RESET)
     console.log(
       '\n\tPlease visit https://legacy.yarnpkg.com/en/docs/install to find instructions on how to install Yarn.\n'

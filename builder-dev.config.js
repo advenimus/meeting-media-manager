@@ -41,7 +41,7 @@ const macOS = {
 
 module.exports = {
   productName: 'Meeting Media Manager',
-  appId: 'sircharlo.meeting-media-manager',
+  appId: 'advenimus.meeting-media-manager',
   artifactName: 'meeting-media-manager-${version}.${ext}',
   buildDependenciesFromSource: true,
   generateUpdatesFilesForAllChannels: true,

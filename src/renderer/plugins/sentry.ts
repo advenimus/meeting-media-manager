@@ -10,19 +10,18 @@ const plugin: Plugin = ({ $config, app }, inject) => {
       dsn: $config.sentryDSN,
       dist: platform().replace('32', ''),
       enabled: $config.sentryEnabled,
-      release: `meeting-media-manager@${
-        $config.isDev || !$config.ci ? 'dev' : $config.version.substring(1)
-      }`,
+      release: `meeting-media-manager@${$config.isDev || !$config.ci ? 'dev' : $config.version.substring(1)
+        }`,
       environment: $config.isDev ? 'development' : 'production',
       integrations: app.router
         ? [
-            new Sentry.BrowserTracing({
-              routingInstrumentation: Sentry.vueRouterInstrumentation(
-                app.router
-              ),
-              tracingOrigins: ['localhost', 'my-site-url.com', /^\//],
-            }),
-          ]
+          new Sentry.BrowserTracing({
+            routingInstrumentation: Sentry.vueRouterInstrumentation(
+              app.router
+            ),
+            tracingOrigins: ['localhost', 'my-site-url.com', /^\//],
+          }),
+        ]
         : [],
       tracesSampleRate: $config.isDev ? 1.0 : 0.1,
     })

@@ -15,6 +15,8 @@ const windowsOS = {
 
   nsis: {
     oneClick: false,
+    perMachine: true, // Require admin rights for installation
+    allowElevation: true, // Allow elevation to run as admin:mac
     artifactName: 'meeting-media-manager-${version}-${arch}.${ext}',
   },
 }
@@ -41,7 +43,7 @@ const macOS = {
 
 module.exports = {
   productName: 'Meeting Media Manager',
-  appId: 'sircharlo.meeting-media-manager',
+  appId: 'advenimus.meeting-media-manager',
   artifactName: 'meeting-media-manager-${version}.${ext}',
   buildDependenciesFromSource: true,
   generateUpdatesFilesForAllChannels: true,

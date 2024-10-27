@@ -1,6 +1,6 @@
 {
   "name": "meeting-media-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Meeting Media Manager",
   "keywords": [
     "M³",
@@ -8,8 +8,8 @@
     "m3",
     "meeting media manager"
   ],
-  "homepage": "https://github.com/advenimus/meetingmediamanager/",
-  "bugs": "https://github.com/advenimus/meetingmediamanager/issues",
+  "homepage": "https://github.com/advenimus/meeting-media-manager/",
+  "bugs": "https://github.com/advenimus/meeting-media-manager/issues",
   "license": "AGPL-3.0-or-later",
   "author": {
     "name": "advenimus",
@@ -18,7 +18,7 @@
   "main": "./dist/main/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/advenimus/meetingmediamanager.git"
+    "url": "https://github.com/advenimus/meeting-media-manager.git"
   },
   "scripts": {
     "prebuild": "node ./pre-build.js",
@@ -142,7 +142,7 @@
     "xvfb-maybe": "^0.2.1"
   },
   "build": {
-    "appId": "com.advenimus.meetingmediamanager",
+    "appId": "com.advenimus.meeting-media-manager",
     "productName": "Meeting Media Manager",
     "directories": {
       "output": "build"
@@ -154,7 +154,7 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "/Users/cjvautour/Github/meetingmediamanager/build/icons/icon.ico"
+      "icon": "build/icons/icon.ico"
     }
   }
 }
