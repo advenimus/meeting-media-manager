@@ -2,7 +2,6 @@ pull_request_rules:
   - name: Automatic merge for trusted authors and dependabot
     conditions:
       - or:
-          - author=mtdvlpr
           - author=advenimus
           - and:
               - author=dependabot[bot]
